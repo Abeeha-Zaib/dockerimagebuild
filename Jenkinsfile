@@ -9,5 +9,15 @@ stage('Build Docker Image') {
                 sh "docker tag username/${image_name}:${image_tag} ${image_name}:${image_tag}"   } 
             }
         }
+        tage('publish') {
+  steps {
+    script {
+      image.push rev
+      image.push 'latest'
+    }
+  }
+}
+
+
       }
 }  
