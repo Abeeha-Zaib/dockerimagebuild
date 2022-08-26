@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        sudo chmod 666 /var/run/docker.sock
+    
 sudo usermode -a -G docker jenkins
         app = docker.build("getintodevops/hellonode")
     }
